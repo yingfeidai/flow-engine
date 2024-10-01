@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@flow-engine/core": ["packages/core/src/index.ts"],
+      "@flow-engine/error": ["packages/error/src/index.ts"],
+      "@flow-engine/event": ["packages/event/src/index.ts"],
+      "@flow-engine/logger": ["packages/logger/src/index.ts"],
+      "@flow-engine/manager": ["packages/manager/src/index.ts"],
+      "@flow-engine/scheduler": ["packages/scheduler/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
