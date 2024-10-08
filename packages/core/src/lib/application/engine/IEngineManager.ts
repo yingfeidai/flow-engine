@@ -1,12 +1,18 @@
-import { IConcurrencyManager, ILifecycleManager, ILockingManager, IManagerInjectable, IPluginManager, IStorageManager } from "@flow-engine/manager";
-import { WorkflowStatusEnum } from "../../domain/workflow/WorkflowStatusEnum";
-import { IWorkflowProperties } from "../../domain/workflow/IWorkflow";
-import { ITaskProperties } from "../../domain/task/ITask";
-import { ILoggerManager } from "@flow-engine/logger";
-import { ISchedulerManager } from "@flow-engine/scheduler";
-import { IErrorManager } from "@flow-engine/error";
-import { IEventManager } from "@flow-engine/event";
-
+import {
+  IConcurrencyManager,
+  ILifecycleManager,
+  ILockingManager,
+  IManagerInjectable,
+  IPluginManager,
+  IStorageManager,
+} from '@flow-engine/manager';
+import { WorkflowStatusEnum } from '../../domain/workflow/WorkflowStatusEnum';
+import { IWorkflowProperties } from '../../domain/workflow/IWorkflow';
+import { ITaskProperties } from '../../domain/task/ITask';
+import { ILoggerManager } from '@flow-engine/logger';
+import { ISchedulerManager } from '@flow-engine/scheduler';
+import { IErrorManager } from '@flow-engine/error';
+import { IEventManager } from '@flow-engine/event';
 
 export interface IEngineManager<TStatus = WorkflowStatusEnum>
   extends IManagerInjectable<IEngineManagerInjectable> {

@@ -1,10 +1,5 @@
-import { IErrorProperties } from "../domain/IError";
+import { IErrorProperties } from '../domain/IError';
 
-
-export interface IErrorReporter<
-TProperties = IErrorProperties
-> {
-  reportError(
-    error: TProperties
-  ): Promise<void>;
+export interface IErrorReporter<TProperties = IErrorProperties> {
+  reportError(error: TProperties): Promise<void>;
 }

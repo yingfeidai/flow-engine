@@ -5,4 +5,5 @@ export const workflowStatusEnum = {
   FAILED: 'Failed',
 };
 
-export type WorkflowStatusEnum = typeof workflowStatusEnum[keyof typeof workflowStatusEnum];
+export type WorkflowStatusEnum =
+  (typeof workflowStatusEnum)[keyof typeof workflowStatusEnum];

@@ -3,4 +3,4 @@ export const lockTypeEnum = {
   PESSIMISTIC: 'Pessimistic',
 } as const;
 
-export type LockTypeEnum = typeof lockTypeEnum[keyof typeof lockTypeEnum];
+export type LockTypeEnum = (typeof lockTypeEnum)[keyof typeof lockTypeEnum];

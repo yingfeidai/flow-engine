@@ -4,4 +4,5 @@ export const scheduleTypeEnum = {
   WORKFLOW: 'Workflow',
 };
 
-export type ScheduleTypeEnum = typeof scheduleTypeEnum[keyof typeof scheduleTypeEnum];
+export type ScheduleTypeEnum =
+  (typeof scheduleTypeEnum)[keyof typeof scheduleTypeEnum];

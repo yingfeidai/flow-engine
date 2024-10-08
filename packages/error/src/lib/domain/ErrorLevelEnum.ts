@@ -1,8 +1,9 @@
 export const errorLevelEnum = {
-  INFO: 'Info', 
+  INFO: 'Info',
   WARNING: 'Waring',
-  ERROR: 'Error', 
-  CRITICAL: 'Critical', 
+  ERROR: 'Error',
+  CRITICAL: 'Critical',
 } as const;
 
-export type ErrorLevelEnum = typeof errorLevelEnum[keyof typeof errorLevelEnum];
+export type ErrorLevelEnum =
+  (typeof errorLevelEnum)[keyof typeof errorLevelEnum];

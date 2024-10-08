@@ -27,7 +27,7 @@ export interface IStorageConfig<
   TCloudProvider = CloudProviderEnum,
   TCustomConfig = unknown
 > {
-  storageType: TStorageType; 
+  storageType: TStorageType;
 
   databaseConfig?: IDatabaseConfig;
   filesystemConfig?: IFilesystemConfig;

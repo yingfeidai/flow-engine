@@ -7,30 +7,20 @@ import { IErrorRecoveryStrategy } from './IErrorRecoveryStrategy';
 
 export interface IErrorManager<
   TProperties = IErrorProperties,
-  TFilter = IErrorFilter,
-> extends IStorageManager{
-  registerHandler(
-    handler: IErrorHandler<TProperties>
-  ): void;
-  unregisterHandler(
-    handler: IErrorHandler<TProperties>
-  ): void;
+  TFilter = IErrorFilter
+> extends IStorageManager {
+  registerHandler(handler: IErrorHandler<TProperties>): void;
+  unregisterHandler(handler: IErrorHandler<TProperties>): void;
   getHandlers(): IErrorHandler<TProperties>[];
 
-  registerReporter(
-    reporter: IErrorReporter<TProperties>
-  ): void;
-  unregisterReporter(
-    reporter: IErrorReporter<TProperties>
-  ): void;
+  registerReporter(reporter: IErrorReporter<TProperties>): void;
+  unregisterReporter(reporter: IErrorReporter<TProperties>): void;
   getReporters(): IErrorReporter<TProperties>[];
 
-  registerRecoveryStrategy(
-      strategy: IErrorRecoveryStrategy<TProperties>
-    ): void;
+  registerRecoveryStrategy(strategy: IErrorRecoveryStrategy<TProperties>): void;
   unregisterRecoveryStrategy(
-      strategy: IErrorRecoveryStrategy<TProperties>
-    ): void;
+    strategy: IErrorRecoveryStrategy<TProperties>
+  ): void;
   getRecoveryStrategies(): IErrorRecoveryStrategy<TProperties>[];
 
   captureError(error: TProperties): void;

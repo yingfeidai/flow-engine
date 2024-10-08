@@ -5,4 +5,5 @@ export const taskStatusEnum = {
   FAILED: 'Failed',
 };
 
-export type TaskStatusEnum = typeof taskStatusEnum[keyof typeof taskStatusEnum];
+export type TaskStatusEnum =
+  (typeof taskStatusEnum)[keyof typeof taskStatusEnum];

@@ -4,4 +4,5 @@ export const storageTypeEnum = {
   CLOUD: 'Cloud',
 } as const;
 
-export type StorageTypeEnum = typeof storageTypeEnum[keyof typeof storageTypeEnum];
+export type StorageTypeEnum =
+  (typeof storageTypeEnum)[keyof typeof storageTypeEnum];

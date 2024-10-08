@@ -1,4 +1,4 @@
-import { ITaskProperties } from "../../domain/task/ITask";
+import { ITaskProperties } from '../../domain/task/ITask';
 
 export interface ITaskManager {
   addTask(task: ITaskProperties): Promise<void>;

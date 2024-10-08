@@ -6,9 +6,9 @@ export interface ILogProperties<
   TLogContext = string,
   TLogMeta = Record<string, string | number | boolean | Date>
 > extends IBaseProperties {
-  level: TLogLevel; 
-  message: string; 
-  timestamp: Date; 
-  context?: TLogContext; 
-  metadata?: TLogMeta; 
+  level: TLogLevel;
+  message: string;
+  timestamp: Date;
+  context?: TLogContext;
+  metadata?: TLogMeta;
 }

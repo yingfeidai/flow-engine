@@ -6,4 +6,4 @@ export const logLevelEnum = {
   CRITICAL: 'Critical',
 } as const;
 
-export type LogLevelEnum = typeof logLevelEnum[keyof typeof logLevelEnum];
+export type LogLevelEnum = (typeof logLevelEnum)[keyof typeof logLevelEnum];

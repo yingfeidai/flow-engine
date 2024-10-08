@@ -14,4 +14,4 @@ export const eventTypeEnum = {
   ConcurrencyLimitExceeded: 'ConcurrencyLimitExceeded',
 } as const;
 
-export type EventTypeEnum = typeof eventTypeEnum[keyof typeof eventTypeEnum];
+export type EventTypeEnum = (typeof eventTypeEnum)[keyof typeof eventTypeEnum];

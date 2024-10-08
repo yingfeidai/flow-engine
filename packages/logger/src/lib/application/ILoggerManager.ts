@@ -1,10 +1,15 @@
-
-import { IDispatcherManager, IManagerInjectable, IStorageManager } from '@flow-engine/manager';
+import {
+  IDispatcherManager,
+  IManagerInjectable,
+  IStorageManager,
+} from '@flow-engine/manager';
 import { ILoggerFilter } from './ILoggerFilter';
 import { ILogProperties } from '../domain/ILog';
 
-export interface ILoggerManager<TFilter = ILoggerFilter, TProperties = ILogProperties>
-  extends IManagerInjectable<ILoggerManagerInjectable> {
+export interface ILoggerManager<
+  TFilter = ILoggerFilter,
+  TProperties = ILogProperties
+> extends IManagerInjectable<ILoggerManagerInjectable> {
   log(properties: TProperties): Promise<void>;
   getLogs(conditions?: TFilter): Promise<ILogProperties[]>;
   clearLogs(): Promise<void>;

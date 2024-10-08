@@ -4,4 +4,5 @@ export const cloudProviderEnum = {
   GOOGLE: 'Google',
 } as const;
 
-export type CloudProviderEnum = typeof cloudProviderEnum[keyof typeof cloudProviderEnum];
+export type CloudProviderEnum =
+  (typeof cloudProviderEnum)[keyof typeof cloudProviderEnum];

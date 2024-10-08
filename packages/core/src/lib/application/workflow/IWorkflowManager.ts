@@ -1,4 +1,4 @@
-import { IWorkflowProperties } from "../../domain/workflow/IWorkflow";
+import { IWorkflowProperties } from '../../domain/workflow/IWorkflow';
 
 export interface IWorkflowManager {
   startWorkflow(workflowId: string): Promise<void>; // Start the workflow

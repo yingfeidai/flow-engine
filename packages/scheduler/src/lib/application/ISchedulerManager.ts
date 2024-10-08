@@ -1,6 +1,6 @@
-import { IManagerInjectable, IStorageManager } from "@flow-engine/manager";
-import { IScheduler } from "../domain/IScheduler";
-import { ISchedulerCoordinatorManager } from "../domain/ISchedulerCoordinatorManager";
+import { IManagerInjectable, IStorageManager } from '@flow-engine/manager';
+import { IScheduler } from '../domain/IScheduler';
+import { ISchedulerCoordinatorManager } from '../domain/ISchedulerCoordinatorManager';
 
 export interface ISchedulerManager
   extends IManagerInjectable<ISchedulerManagerInjectable> {
