@@ -2,7 +2,9 @@
   "name": "@flow-engine/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
