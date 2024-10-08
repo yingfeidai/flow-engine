@@ -9,7 +9,6 @@ export interface IErrorManager<
   TProperties = IErrorProperties,
   TFilter = IErrorFilter,
 > extends IStorageManager{
-  // 错误处理器管理
   registerHandler(
     handler: IErrorHandler<TProperties>
   ): void;
@@ -18,7 +17,6 @@ export interface IErrorManager<
   ): void;
   getHandlers(): IErrorHandler<TProperties>[];
 
-  // 错误报告器管理
   registerReporter(
     reporter: IErrorReporter<TProperties>
   ): void;
@@ -27,17 +25,14 @@ export interface IErrorManager<
   ): void;
   getReporters(): IErrorReporter<TProperties>[];
 
-  // 错误恢复策略管理
   registerRecoveryStrategy(
       strategy: IErrorRecoveryStrategy<TProperties>
     ): void;
-    unregisterRecoveryStrategy(
+  unregisterRecoveryStrategy(
       strategy: IErrorRecoveryStrategy<TProperties>
     ): void;
-    getRecoveryStrategies(): IErrorRecoveryStrategy<TProperties>[];
+  getRecoveryStrategies(): IErrorRecoveryStrategy<TProperties>[];
 
-    
-  // 捕获错误
   captureError(error: TProperties): void;
   getAllErrors(): Promise<TProperties[]>;
   getLogs(conditions?: TFilter): Promise<IErrorProperties[]>;
