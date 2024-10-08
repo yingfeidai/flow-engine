@@ -3,14 +3,14 @@ import { IDispatcherManager, IManagerInjectable, IStorageManager } from '@flow-e
 import { ILoggerFilter } from './ILoggerFilter';
 import { ILogProperties } from '../domain/ILog';
 
-export interface ILoggerManager<TFilter = ILoggerFilter>
+export interface ILoggerManager<TFilter = ILoggerFilter, TProperties = ILogProperties>
   extends IManagerInjectable<ILoggerManagerInjectable> {
-  log(properties: ILogProperties): Promise<void>;
+  log(properties: TProperties): Promise<void>;
   getLogs(conditions?: TFilter): Promise<ILogProperties[]>;
   clearLogs(): Promise<void>;
 }
 
-export interface ILoggerManagerInjectable {
-  storageManager?: IStorageManager<ILogProperties>;
-  dispatcherManager?: IDispatcherManager<ILogProperties>;
+export interface ILoggerManagerInjectable<TProperties = ILogProperties> {
+  storageManager?: IStorageManager<TProperties>;
+  dispatcherManager?: IDispatcherManager<TProperties>;
 }
