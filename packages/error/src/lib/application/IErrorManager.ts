@@ -25,6 +25,6 @@ export interface IErrorManager<
 
   captureError(error: TProperties): void;
   getAllErrors(): Promise<TProperties[]>;
-  getLogs(conditions?: TFilter): Promise<IErrorProperties[]>;
+  getErrors(conditions?: TFilter): Promise<TProperties[]>;
   clearErrors(): Promise<void>;
 }

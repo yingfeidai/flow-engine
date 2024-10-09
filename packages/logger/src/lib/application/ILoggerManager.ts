@@ -11,7 +11,7 @@ export interface ILoggerManager<
   TProperties = ILogProperties
 > extends IManagerSettable<ILoggerManagerInjectable> {
   log(properties: TProperties): Promise<void>;
-  getLogs(conditions?: TFilter): Promise<ILogProperties[]>;
+  getLogs(conditions?: TFilter): Promise<TProperties[]>;
   clearLogs(): Promise<void>;
 }
 
