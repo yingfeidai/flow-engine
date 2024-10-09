@@ -1,6 +1,9 @@
-export interface IConcurrencyManager<TTask> {
-  setConcurrencyLimit(limit: number): void;
-  canExecuteConcurrently(): boolean;
-  registerTaskStart(task: TTask): void;
-  registerTaskComplete(task: TTask): void;
+export interface IConcurrencyManager {
+  setMaxConcurrency(limit: number): Promise<void>;
+  getCurrentConcurrency(): Promise<number>;
+  getMaxConcurrency(): Promise<number>;
+  startConcurrency(): Promise<void>;
+  pauseConcurrency(): Promise<void>;
+  resumeConcurrency(): Promise<void>;
+  isConcurrencyActive(): Promise<boolean>;
 }
