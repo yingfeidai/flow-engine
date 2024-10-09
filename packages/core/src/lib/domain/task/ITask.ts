@@ -1,7 +1,7 @@
 import {
   IBaseProperties,
   IDependencyManager,
-  IManagerInjectable,
+  IManagerSettable,
   IPropertiesManager,
   IRetryManager,
   IStorageManager,
@@ -30,7 +30,7 @@ export interface ITaskProperties<
 
 export interface ITask<TProperties = ITaskProperties>
   extends IPropertiesManager<TProperties>,
-    IManagerInjectable<ITaskManagerInjectable> {
+  IManagerSettable<ITaskManagerInjectable> {
   execute(): Promise<void>;
   cancel?(): Promise<void>;
 

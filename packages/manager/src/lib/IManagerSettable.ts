@@ -1,3 +1,3 @@
-export interface IManagerInjectable<TManagers> {
+export interface IManagerSettable<TManagers> {
   setManagers(managers: Partial<TManagers>): Promise<void>;
 }

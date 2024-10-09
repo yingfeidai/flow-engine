@@ -1,4 +1,4 @@
-export * from './lib/IManagerInjectable';
+export * from './lib/IManagerSettable';
 
 export * from './lib/concurrency-manager/IConcurrencyManager';
 

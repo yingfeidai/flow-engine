@@ -3,7 +3,7 @@ import {
   IConcurrencyManager,
   IDependencyManager,
   ILifecycleManager,
-  IManagerInjectable,
+  IManagerSettable,
   IPropertiesManager,
   IStorageManager,
 } from '@flow-engine/manager';
@@ -30,7 +30,7 @@ export interface IWorkflowProperties<
 
 export interface IWorkflow<IProperties = IWorkflowProperties>
   extends IPropertiesManager<IProperties>,
-    IManagerInjectable<IWorkflowManagerInjectable> {
+  IManagerSettable<IWorkflowManagerInjectable> {
   start(): Promise<void>;
   pause?(): Promise<void>;
   resume?(): Promise<void>;

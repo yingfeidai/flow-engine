@@ -2,7 +2,7 @@ import {
   IConcurrencyManager,
   ILifecycleManager,
   ILockingManager,
-  IManagerInjectable,
+  IManagerSettable,
   IPluginManager,
   IStorageManager,
 } from '@flow-engine/manager';
@@ -15,7 +15,7 @@ import { IErrorManager } from '@flow-engine/error';
 import { IEventManager } from '@flow-engine/event';
 
 export interface IEngineManager<TStatus = WorkflowStatusEnum>
-  extends IManagerInjectable<IEngineManagerInjectable> {
+  extends IManagerSettable<IEngineManagerInjectable> {
   registerWorkflow(workflow: IWorkflowProperties): Promise<void>;
   unregisterWorkflow(workflowId: string): Promise<void>;
 

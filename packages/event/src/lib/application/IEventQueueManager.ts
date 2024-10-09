@@ -1,8 +1,8 @@
-import { IManagerInjectable, IStorageManager } from '@flow-engine/manager';
+import { IManagerSettable, IStorageManager } from '@flow-engine/manager';
 import { IEventProperties } from '../domain/IEvent';
 
 export interface IEventQueueManager<TProperties = IEventProperties>
-  extends IManagerInjectable<IEventQueueManagerInjectable> {
+  extends IManagerSettable<IEventQueueManagerInjectable> {
   addEventToQueue(event: TProperties): Promise<void>;
   processNextEvent(): Promise<void>;
   getQueueLength(): Promise<number>;
