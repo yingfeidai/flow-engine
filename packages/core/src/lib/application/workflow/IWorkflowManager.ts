@@ -11,9 +11,10 @@ import {
 } from '@flow-engine/manager';
 import { ITaskManager } from '../task/ITaskManager';
 import { ITaskProperties } from '../../domain/task/ITask';
+import { WorkflowStatusEnum } from '../../domain/workflow/WorkflowStatusEnum';
 
-export interface IWorkflowManager<TTaskProperties = ITaskProperties>
-  extends IManagerSettable<IWorkflowManagerSettable<TTaskProperties>> {
+export interface IWorkflowManager<TTaskProperties = ITaskProperties, TStatus = WorkflowStatusEnum>
+  extends IManagerSettable<IWorkflowManagerSettable<TTaskProperties, TStatus>> {
   startWorkflow(workflowId: string): Promise<void>; // Start the workflow
   stopWorkflow(workflowId: string): Promise<void>;
   restartWorkflow(workflowId: string): Promise<void>;
@@ -27,13 +28,13 @@ export interface IWorkflowManager<TTaskProperties = ITaskProperties>
   getAllWorkflows(): Promise<IWorkflowProperties[]>; // Get all workflows
 }
 
-export interface IWorkflowManagerSettable<TTaskProperties> {
+export interface IWorkflowManagerSettable<TTaskProperties, TStatus> {
   taskManager: ITaskManager;
   storageManager: IStorageManager;
   eventManager?: IEventManager;
-  concurrencyManager?: IConcurrencyManager<TTaskProperties>;
+  concurrencyManager?: IConcurrencyManager;
   dependencyManager?: IDependencyManager<TTaskProperties>;
-  lifecycleManager?: ILifecycleManager;
+  lifecycleManager?: ILifecycleManager<TStatus>;
   errorManager?: IErrorManager;
   logManager?: ILoggerManager;
 }
