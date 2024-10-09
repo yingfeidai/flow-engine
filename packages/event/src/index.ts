@@ -4,4 +4,4 @@ export { IEventQueueManager } from './lib/application/IEventQueueManager';
 
 export { EventTypeEnum } from './lib/domain/EventTypeEnum';
 export { IEvent } from './lib/domain/IEvent';
-export { IEventTriggerManager } from './lib/domain/IEventTriggerManager';
+export { IEventTriggerManager } from './lib/application/IEventTriggerManager';
