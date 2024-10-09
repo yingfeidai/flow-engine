@@ -10,6 +10,6 @@ export interface IEventProperties<
   payload?: TPayload;
 }
 
-export interface IEvent extends IPropertiesManager<IEventProperties> {
-  update(properties: Partial<IEventProperties>): Promise<void>;
+export interface IEvent<TType = EventTypeEnum, TProperties = IEventProperties>  extends IPropertiesManager<TProperties> {
+  isOfType(type: TType): boolean;
 }
