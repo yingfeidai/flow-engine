@@ -1,7 +1,7 @@
 import { IBaseProperties } from '@flow-engine/manager';
-import { ScheduleTypeEnum } from './SchedulerTypeEnum';
+import { SchedulerTypeEnum } from './SchedulerTypeEnum';
 
-export interface ISchedulerProperties<TScheduleType = ScheduleTypeEnum>
+export interface ISchedulerProperties<TScheduleType = SchedulerTypeEnum>
   extends IBaseProperties {
   scheduleTime: Date;
   type: TScheduleType;

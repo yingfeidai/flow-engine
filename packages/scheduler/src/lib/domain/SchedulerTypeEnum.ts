@@ -1,8 +1,8 @@
-export const scheduleTypeEnum = {
+export const schedulerTypeEnum = {
   EVENT: 'Event',
   TASK: 'Task',
   WORKFLOW: 'Workflow',
 };
 
-export type ScheduleTypeEnum =
-  (typeof scheduleTypeEnum)[keyof typeof scheduleTypeEnum];
+export type SchedulerTypeEnum =
+  (typeof schedulerTypeEnum)[keyof typeof schedulerTypeEnum];
