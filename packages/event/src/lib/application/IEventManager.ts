@@ -11,7 +11,7 @@ import { EventTypeEnum } from '../domain/EventTypeEnum';
 export interface IEventManager<
   TType = EventTypeEnum,
   TProperties = IEventProperties
-> extends IManagerSettable<IEventManagerInjectable> {
+> extends IManagerSettable<IEventManagerSettable> {
   publish(event: TProperties): Promise<void>;
   subscribe(
     eventType: TType,
@@ -24,7 +24,7 @@ export interface IEventManager<
   getSubscribers(eventType: TType): ((event: TProperties) => void)[];
 }
 
-export interface IEventManagerInjectable {
+export interface IEventManagerSettable {
   storageManager?: IStorageManager<IEventProperties>;
   dispatcherManager?: IDispatcherManager<IEventProperties>;
   queueManager?: IEventQueueManager;

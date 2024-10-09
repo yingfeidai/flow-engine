@@ -30,7 +30,7 @@ export interface IWorkflowProperties<
 
 export interface IWorkflow<IProperties = IWorkflowProperties>
   extends IPropertiesManager<IProperties>,
-  IManagerSettable<IWorkflowManagerInjectable> {
+    IManagerSettable<IWorkflowManagerSettable> {
   start(): Promise<void>;
   pause?(): Promise<void>;
   resume?(): Promise<void>;
@@ -40,7 +40,7 @@ export interface IWorkflow<IProperties = IWorkflowProperties>
   isCompleted(): boolean;
 }
 
-export interface IWorkflowManagerInjectable {
+export interface IWorkflowManagerSettable {
   taskManager?: ITaskManager;
   concurrencyManager?: IConcurrencyManager<ITaskProperties>;
   logManager?: ILoggerManager;

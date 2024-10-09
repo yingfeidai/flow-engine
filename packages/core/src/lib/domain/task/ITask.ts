@@ -30,14 +30,14 @@ export interface ITaskProperties<
 
 export interface ITask<TProperties = ITaskProperties>
   extends IPropertiesManager<TProperties>,
-  IManagerSettable<ITaskManagerInjectable> {
+    IManagerSettable<ITaskManagerSettable> {
   execute(): Promise<void>;
   cancel?(): Promise<void>;
 
   update(properties: Partial<TProperties>): Promise<void>;
 }
 
-export interface ITaskManagerInjectable {
+export interface ITaskManagerSettable {
   dependencyManager?: IDependencyManager<ITask>;
   retryManager?: IRetryManager;
   logManager?: ILoggerManager;

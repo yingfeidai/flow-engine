@@ -3,12 +3,12 @@ import { IScheduler } from '../domain/IScheduler';
 import { ISchedulerCoordinatorManager } from '../domain/ISchedulerCoordinatorManager';
 
 export interface ISchedulerManager
-  extends IManagerSettable<ISchedulerManagerInjectable> {
+  extends IManagerSettable<ISchedulerManagerSettable> {
   getAllScheduled(): Promise<{ eventId: string; scheduleTime: Date }[]>;
   clearAllScheduled(): Promise<void>;
 }
 
-export interface ISchedulerManagerInjectable {
+export interface ISchedulerManagerSettable {
   eventScheduler?: IScheduler;
   taskScheduler?: IScheduler;
   workflowScheduler?: IScheduler;
