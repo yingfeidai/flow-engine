@@ -21,5 +21,5 @@ export interface IErrorContextProperties {
 
 export interface IError<TProperties = IErrorProperties>
   extends IPropertiesManager<TProperties> {
-  update(properties: Partial<TProperties>): Promise<void>;
+    escalateError(): Promise<void>
 }
