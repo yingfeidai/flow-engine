@@ -1,5 +1,5 @@
-export * from './lib/application/ILoggerFilter';
-export * from './lib/application/ILoggerManager';
+export { ILoggerFilter } from './lib/application/ILoggerFilter';
+export { ILoggerManager } from './lib/application/ILoggerManager';
 
-export * from './lib/domain/LogLevelEnum';
-export * from './lib/domain/ILog';
+export { LogLevelEnum } from './lib/domain/LogLevelEnum';
+export { ILogProperties } from './lib/domain/ILog';

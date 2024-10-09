@@ -1,5 +1,5 @@
-export * from './lib/application/ISchedulerManager';
+export { ISchedulerManager } from './lib/application/ISchedulerManager';
 
-export * from './lib/domain/IScheduler';
-export * from './lib/domain/SchedulerTypeEnum';
-export * from './lib/domain/ISchedulerCoordinatorManager';
+export { IScheduler } from './lib/domain/IScheduler';
+export { SchedulerTypeEnum } from './lib/domain/SchedulerTypeEnum';
+export { ISchedulerCoordinatorManager } from './lib/domain/ISchedulerCoordinatorManager';

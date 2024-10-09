@@ -1,9 +1,9 @@
-export * from './lib/application/engine/IEngineManager';
-export * from './lib/application/task/ITaskManager';
-export * from './lib/application/workflow/IWorkflowManager';
+export { IEngineManager } from './lib/application/engine/IEngineManager';
+export { ITaskManager } from './lib/application/task/ITaskManager';
+export { IWorkflowManager } from './lib/application/workflow/IWorkflowManager';
 
-export * from './lib/domain/task/ITask';
-export * from './lib/domain/task/TaskStatusEnum';
+export { ITask } from './lib/domain/task/ITask';
+export { TaskStatusEnum } from './lib/domain/task/TaskStatusEnum';
 
-export * from './lib/domain/workflow/IWorkflow';
-export * from './lib/domain/workflow/WorkflowStatusEnum';
+export { IWorkflow } from './lib/domain/workflow/IWorkflow';
+export { WorkflowStatusEnum } from './lib/domain/workflow/WorkflowStatusEnum';

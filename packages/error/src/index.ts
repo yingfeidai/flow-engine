@@ -1,8 +1,8 @@
-export * from './lib/domain/ErrorLevelEnum';
-export * from './lib/domain/IError';
+export { ErrorLevelEnum } from './lib/domain/ErrorLevelEnum';
+export { IError } from './lib/domain/IError';
 
-export * from './lib/application/IErrorFilter';
-export * from './lib/application/IErrorHandler';
-export * from './lib/application/IErrorManager';
-export * from './lib/application/IErrorRecoveryStrategy';
-export * from './lib/application/IErrorReporter';
+export { IErrorFilter } from './lib/application/IErrorFilter';
+export { IErrorHandler } from './lib/application/IErrorHandler';
+export { IErrorManager } from './lib/application/IErrorManager';
+export { IErrorRecoveryStrategy } from './lib/application/IErrorRecoveryStrategy';
+export { IErrorReporter } from './lib/application/IErrorReporter';
