@@ -1,18 +1,9 @@
 import {
   IBaseProperties,
-  IConcurrencyManager,
-  IDependencyManager,
-  ILifecycleManager,
-  IManagerSettable,
   IPropertiesManager,
-  IStorageManager,
 } from '@flow-engine/manager';
 import { WorkflowStatusEnum } from './WorkflowStatusEnum';
 import { ITaskProperties } from '../task/ITask';
-import { ITaskManager } from '../../application/task/ITaskManager';
-import { ILoggerManager } from '@flow-engine/logger';
-import { IErrorManager } from '@flow-engine/error';
-import { IEventManager } from '@flow-engine/event';
 
 export interface IWorkflowProperties<
   TStatus = WorkflowStatusEnum,
@@ -29,8 +20,7 @@ export interface IWorkflowProperties<
 }
 
 export interface IWorkflow<IProperties = IWorkflowProperties>
-  extends IPropertiesManager<IProperties>,
-    IManagerSettable<IWorkflowManagerSettable> {
+  extends IPropertiesManager<IProperties> {
   start(): Promise<void>;
   pause?(): Promise<void>;
   resume?(): Promise<void>;
@@ -40,13 +30,3 @@ export interface IWorkflow<IProperties = IWorkflowProperties>
   isCompleted(): boolean;
 }
 
-export interface IWorkflowManagerSettable {
-  taskManager?: ITaskManager;
-  concurrencyManager?: IConcurrencyManager<ITaskProperties>;
-  logManager?: ILoggerManager;
-  dependencyManager?: IDependencyManager<ITaskProperties>;
-  lifecycleManager?: ILifecycleManager;
-  errorManager?: IErrorManager;
-  eventManager?: IEventManager;
-  storageManager?: IStorageManager;
-}

@@ -29,6 +29,7 @@ export interface IEngineManager<TStatus = WorkflowStatusEnum>
 }
 
 export interface IEngineManagerSettable<TTaskProperties = ITaskProperties> {
+  storageManager: IStorageManager;
   logManager?: ILoggerManager;
   concurrencyManager?: IConcurrencyManager<TTaskProperties>;
   lifecycleManager?: ILifecycleManager;
@@ -36,6 +37,5 @@ export interface IEngineManagerSettable<TTaskProperties = ITaskProperties> {
   schedulerManager?: ISchedulerManager;
   errorManager?: IErrorManager;
   eventManager?: IEventManager;
-  storageManager?: IStorageManager;
   lockingManager?: ILockingManager;
 }

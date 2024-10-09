@@ -1,15 +1,8 @@
 import {
   IBaseProperties,
-  IDependencyManager,
-  IManagerSettable,
   IPropertiesManager,
-  IRetryManager,
-  IStorageManager,
 } from '@flow-engine/manager';
 import { TaskStatusEnum } from './TaskStatusEnum';
-import { ILoggerManager } from '@flow-engine/logger';
-import { IErrorManager } from '@flow-engine/error';
-import { IEventManager } from '@flow-engine/event';
 
 export interface ITaskProperties<
   TStatus = TaskStatusEnum,
@@ -29,19 +22,10 @@ export interface ITaskProperties<
 }
 
 export interface ITask<TProperties = ITaskProperties>
-  extends IPropertiesManager<TProperties>,
-    IManagerSettable<ITaskManagerSettable> {
+  extends IPropertiesManager<TProperties> {
   execute(): Promise<void>;
   cancel?(): Promise<void>;
 
   update(properties: Partial<TProperties>): Promise<void>;
 }
 
-export interface ITaskManagerSettable {
-  dependencyManager?: IDependencyManager<ITask>;
-  retryManager?: IRetryManager;
-  logManager?: ILoggerManager;
-  errorManager?: IErrorManager;
-  eventManager?: IEventManager;
-  storageManager?: IStorageManager;
-}
