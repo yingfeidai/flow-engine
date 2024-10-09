@@ -1,8 +1,8 @@
 export const errorLevelEnum = {
-  INFO: 'Info',
-  WARNING: 'Waring',
-  ERROR: 'Error',
-  CRITICAL: 'Critical',
+  INFO: 'INFO',
+  WARNING: 'WARNING',
+  ERROR: 'ERROR',
+  CRITICAL: 'CRITICAL',
 } as const;
 
 export type ErrorLevelEnum =
