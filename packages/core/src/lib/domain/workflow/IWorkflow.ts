@@ -26,7 +26,6 @@ export interface IWorkflow<IProperties = IWorkflowProperties>
   resume?(): Promise<void>;
   cancel?(): Promise<void>;
 
-  get(): Promise<IProperties>;
   isCompleted(): boolean;
 }
 

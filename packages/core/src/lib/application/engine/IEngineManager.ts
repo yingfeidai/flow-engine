@@ -14,8 +14,8 @@ import { ISchedulerManager } from '@flow-engine/scheduler';
 import { IErrorManager } from '@flow-engine/error';
 import { IEventManager } from '@flow-engine/event';
 
-export interface IEngineManager<TStatus = WorkflowStatusEnum>
-  extends IManagerSettable<IEngineManagerSettable> {
+export interface IEngineManager<TStatus = WorkflowStatusEnum, TTaskProperties = ITaskProperties>
+  extends IManagerSettable<IEngineManagerSettable<TTaskProperties>> {
   registerWorkflow(workflow: IWorkflowProperties): Promise<void>;
   unregisterWorkflow(workflowId: string): Promise<void>;
 
@@ -28,7 +28,7 @@ export interface IEngineManager<TStatus = WorkflowStatusEnum>
   getAllWorkflowStatuses(): Promise<{ [workflowId: string]: TStatus }>;
 }
 
-export interface IEngineManagerSettable<TTaskProperties = ITaskProperties> {
+export interface IEngineManagerSettable<TTaskProperties> {
   storageManager: IStorageManager;
   logManager?: ILoggerManager;
   concurrencyManager?: IConcurrencyManager<TTaskProperties>;

@@ -27,7 +27,7 @@ export interface IWorkflowManager<TTaskProperties = ITaskProperties> extends IMa
 }
 
 
-export interface IWorkflowManagerSettable<TTaskProperties = ITaskProperties> {
+export interface IWorkflowManagerSettable<TTaskProperties> {
   taskManager: ITaskManager;
   storageManager: IStorageManager;
   eventManager?: IEventManager;

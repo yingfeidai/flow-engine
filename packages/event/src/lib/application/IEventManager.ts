@@ -1,5 +1,5 @@
 import { IEventQueueManager } from './IEventQueueManager';
-import { IEventTriggerManager } from '../domain/IEventTriggerManager';
+import { IEventTriggerManager } from './IEventTriggerManager';
 import {
   IDispatcherManager,
   IManagerSettable,
@@ -11,11 +11,11 @@ import { EventTypeEnum } from '../domain/EventTypeEnum';
 export interface IEventManager<
   TType = EventTypeEnum,
   TProperties = IEventProperties
-> extends IManagerSettable<IEventManagerSettable> {
+> extends IManagerSettable<IEventManagerSettable<TProperties>> {
   publish(event: TProperties): Promise<void>;
   subscribe(
     eventType: TType,
-    handler: (event: TProperties) => void
+    handler: (event: TProperties) => Promise<void>
   ): Promise<void>;
   unsubscribe(
     eventType: TType,
@@ -24,9 +24,9 @@ export interface IEventManager<
   getSubscribers(eventType: TType): ((event: TProperties) => void)[];
 }
 
-export interface IEventManagerSettable {
-  storageManager?: IStorageManager<IEventProperties>;
-  dispatcherManager?: IDispatcherManager<IEventProperties>;
+export interface IEventManagerSettable<TProperties> {
+  storageManager?: IStorageManager<TProperties>;
+  dispatcherManager?: IDispatcherManager<TProperties>;
   queueManager?: IEventQueueManager;
   triggerManager?: IEventTriggerManager;
 }

@@ -2,7 +2,7 @@ import { IManagerSettable, IStorageManager } from '@flow-engine/manager';
 import { IEventProperties } from '../domain/IEvent';
 
 export interface IEventQueueManager<TProperties = IEventProperties>
-  extends IManagerSettable<IEventQueueManagerSettable> {
+  extends IManagerSettable<IEventQueueManagerSettable<TProperties>> {
   addEventToQueue(event: TProperties): Promise<void>;
   processNextEvent(): Promise<void>;
   getQueueLength(): Promise<number>;
@@ -14,6 +14,6 @@ export interface IEventQueueManager<TProperties = IEventProperties>
   getQueuedEvents(): Promise<TProperties[]>;
 }
 
-export interface IEventQueueManagerSettable<TProperties = IEventProperties> {
+export interface IEventQueueManagerSettable<TProperties> {
   storageManager?: IStorageManager<TProperties>;
 }

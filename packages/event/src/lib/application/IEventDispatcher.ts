@@ -13,6 +13,7 @@ export interface IEventDispatcher<
   ): Promise<void>;
   unregister(
     eventType: TType,
-    callback: (event: TProperties) => void
+    callback: (event: TProperties) => void,
+    priority?: number
   ): Promise<void>;
 }

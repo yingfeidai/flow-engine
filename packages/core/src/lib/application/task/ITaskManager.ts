@@ -22,7 +22,7 @@ export interface ITaskManager<TProperties = ITaskProperties> extends IManagerSet
   updateTaskStep(taskId: string, newStep: number): Promise<void>;
 }
 
-export interface ITaskManagerSettable<TProperties = ITaskProperties> {
+export interface ITaskManagerSettable<TProperties> {
   storageManager: IStorageManager;
   dependencyManager?: IDependencyManager<TProperties>;
   retryManager?: IRetryManager;

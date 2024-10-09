@@ -25,7 +25,5 @@ export interface ITask<TProperties = ITaskProperties>
   extends IPropertiesManager<TProperties> {
   execute(): Promise<void>;
   cancel?(): Promise<void>;
-
-  update(properties: Partial<TProperties>): Promise<void>;
 }
 

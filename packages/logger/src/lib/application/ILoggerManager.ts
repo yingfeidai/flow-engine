@@ -9,13 +9,13 @@ import { ILogProperties } from '../domain/ILog';
 export interface ILoggerManager<
   TFilter = ILoggerFilter,
   TProperties = ILogProperties
-> extends IManagerSettable<ILoggerManagerSettable> {
+> extends IManagerSettable<ILoggerManagerSettable<TProperties>> {
   log(properties: TProperties): Promise<void>;
   getLogs(conditions?: TFilter): Promise<TProperties[]>;
   clearLogs(): Promise<void>;
 }
 
-export interface ILoggerManagerSettable<TProperties = ILogProperties> {
+export interface ILoggerManagerSettable<TProperties> {
   storageManager?: IStorageManager<TProperties>;
   dispatcherManager?: IDispatcherManager<TProperties>;
 }
