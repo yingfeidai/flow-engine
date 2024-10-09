@@ -1,7 +1,4 @@
-import {
-  IBaseProperties,
-  IPropertiesManager,
-} from '@flow-engine/manager';
+import { IBaseProperties, IPropertiesManager } from '@flow-engine/manager';
 import { WorkflowStatusEnum } from './WorkflowStatusEnum';
 import { ITaskProperties } from '../task/ITask';
 
@@ -28,4 +25,3 @@ export interface IWorkflow<IProperties = IWorkflowProperties>
 
   isCompleted(): boolean;
 }
-

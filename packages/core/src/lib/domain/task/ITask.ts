@@ -1,7 +1,4 @@
-import {
-  IBaseProperties,
-  IPropertiesManager,
-} from '@flow-engine/manager';
+import { IBaseProperties, IPropertiesManager } from '@flow-engine/manager';
 import { TaskStatusEnum } from './TaskStatusEnum';
 
 export interface ITaskProperties<
@@ -26,4 +23,3 @@ export interface ITask<TProperties = ITaskProperties>
   execute(): Promise<void>;
   cancel?(): Promise<void>;
 }
-

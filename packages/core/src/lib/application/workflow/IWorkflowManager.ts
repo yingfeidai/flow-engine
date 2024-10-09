@@ -12,7 +12,8 @@ import {
 import { ITaskManager } from '../task/ITaskManager';
 import { ITaskProperties } from '../../domain/task/ITask';
 
-export interface IWorkflowManager<TTaskProperties = ITaskProperties> extends IManagerSettable<IWorkflowManagerSettable<TTaskProperties>>{
+export interface IWorkflowManager<TTaskProperties = ITaskProperties>
+  extends IManagerSettable<IWorkflowManagerSettable<TTaskProperties>> {
   startWorkflow(workflowId: string): Promise<void>; // Start the workflow
   stopWorkflow(workflowId: string): Promise<void>;
   restartWorkflow(workflowId: string): Promise<void>;
@@ -25,7 +26,6 @@ export interface IWorkflowManager<TTaskProperties = ITaskProperties> extends IMa
   getWorkflow(workflowId: string): Promise<IWorkflowProperties | undefined>; // Get a workflow by ID
   getAllWorkflows(): Promise<IWorkflowProperties[]>; // Get all workflows
 }
-
 
 export interface IWorkflowManagerSettable<TTaskProperties> {
   taskManager: ITaskManager;

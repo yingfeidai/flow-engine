@@ -14,8 +14,10 @@ import { ISchedulerManager } from '@flow-engine/scheduler';
 import { IErrorManager } from '@flow-engine/error';
 import { IEventManager } from '@flow-engine/event';
 
-export interface IEngineManager<TStatus = WorkflowStatusEnum, TTaskProperties = ITaskProperties>
-  extends IManagerSettable<IEngineManagerSettable<TTaskProperties>> {
+export interface IEngineManager<
+  TStatus = WorkflowStatusEnum,
+  TTaskProperties = ITaskProperties
+> extends IManagerSettable<IEngineManagerSettable<TTaskProperties>> {
   registerWorkflow(workflow: IWorkflowProperties): Promise<void>;
   unregisterWorkflow(workflowId: string): Promise<void>;
 

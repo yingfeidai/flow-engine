@@ -9,7 +9,8 @@ import {
   IStorageManager,
 } from '@flow-engine/manager';
 
-export interface ITaskManager<TProperties = ITaskProperties> extends IManagerSettable<ITaskManagerSettable<TProperties>> {
+export interface ITaskManager<TProperties = ITaskProperties>
+  extends IManagerSettable<ITaskManagerSettable<TProperties>> {
   addTask(task: TProperties): Promise<void>;
   removeTask(taskId: string): Promise<void>;
   getTask(taskId: string): Promise<TProperties | undefined>;
