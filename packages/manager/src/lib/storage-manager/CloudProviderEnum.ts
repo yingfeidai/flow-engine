@@ -1,7 +1,7 @@
 export const cloudProviderEnum = {
-  AWS: 'Aws',
-  AZURE: 'Azure',
-  GOOGLE: 'Google',
+  AWS: 'AWS',
+  AZURE: 'AZURE',
+  GOOGLE: 'GOOGLE',
 } as const;
 
 export type CloudProviderEnum =

@@ -1,8 +1,8 @@
 export const workflowStatusEnum = {
-  PENDING: 'Pending',
-  RUNNING: 'Running',
-  COMPLETED: 'Completed',
-  FAILED: 'Failed',
+  PENDING: 'PENDING',
+  RUNNING: 'RUNNING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
 };
 
 export type WorkflowStatusEnum =

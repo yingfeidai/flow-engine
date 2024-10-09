@@ -1,8 +1,8 @@
 export const taskStatusEnum = {
-  PENDING: 'Pending',
-  IN_PROGRESS: 'InProgress',
-  COMPLETED: 'Completed',
-  FAILED: 'Failed',
+  PENDING: 'PENDING',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
 };
 
 export type TaskStatusEnum =

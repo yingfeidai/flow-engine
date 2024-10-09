@@ -1,7 +1,7 @@
 export const schedulerTypeEnum = {
-  EVENT: 'Event',
-  TASK: 'Task',
-  WORKFLOW: 'Workflow',
+  EVENT: 'EVENT',
+  TASK: 'TASK',
+  WORKFLOW: 'WORKFLOW',
 };
 
 export type SchedulerTypeEnum =

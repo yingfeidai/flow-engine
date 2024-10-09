@@ -1,7 +1,7 @@
 export const storageTypeEnum = {
-  DATABASE: 'Database',
-  FILESYSTEM: 'Filesystem',
-  CLOUD: 'Cloud',
+  DATABASE: 'DATABASE',
+  FILESYSTEM: 'FILESYSTEM',
+  CLOUD: 'CLOUD',
 } as const;
 
 export type StorageTypeEnum =

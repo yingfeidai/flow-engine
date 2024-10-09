@@ -1,6 +1,6 @@
 export const retryStrategyEnum = {
-  FIXED: 'Fixed',
-  EXPONENTIAL_BACKOFF: 'ExponentialBackoff',
+  FIXED: 'FIXED',
+  EXPONENTIAL_BACKOFF: 'EXPONENTIAL_BACKOFF',
 };
 export type RetryStrategyEnum =
   (typeof retryStrategyEnum)[keyof typeof retryStrategyEnum];

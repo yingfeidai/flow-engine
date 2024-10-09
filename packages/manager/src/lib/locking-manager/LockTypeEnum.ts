@@ -1,6 +1,6 @@
 export const lockTypeEnum = {
-  OPTIMISTIC: 'Optimistic',
-  PESSIMISTIC: 'Pessimistic',
+  OPTIMISTIC: 'OPTIMISTIC',
+  PESSIMISTIC: 'PESSIMISTIC',
 } as const;
 
 export type LockTypeEnum = (typeof lockTypeEnum)[keyof typeof lockTypeEnum];
