@@ -16,7 +16,7 @@ export interface IErrorProperties<
 export interface IErrorContextProperties {
   requestId?: string;
   userId?: string;
-  additionalInfo?: Record<string, string | number | boolean | Date>;
+  additionalInfo?: Record<string, unknown>;
 }
 
 export interface IError<TProperties = IErrorProperties>
