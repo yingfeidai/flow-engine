@@ -21,7 +21,7 @@ export interface IEventManager<
     eventType: TType,
     handler: (event: TProperties) => Promise<void>
   ): void;
-  getSubscribers(eventType: TType): ((event: TProperties) => void)[];
+  getSubscribers(eventType: TType): ((event: TProperties) => Promise<void>)[];
 }
 
 export type IEventManagerSettable<TProperties> = {

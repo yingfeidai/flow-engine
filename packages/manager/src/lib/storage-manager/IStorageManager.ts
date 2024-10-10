@@ -4,7 +4,7 @@ import { StorageTypeEnum } from './StorageTypeEnum';
 
 // TODO: set default type to ts-sql-toolkit WhereOptionsType
 export interface IFilter<TItem, TWhere = unknown> {
-  filter(conditions: TWhere): TItem[];
+  filter(conditions: TWhere): Promise<TItem[]>;
 }
 
 export interface IStorageManager<
