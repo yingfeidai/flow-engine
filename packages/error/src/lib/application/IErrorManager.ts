@@ -9,18 +9,18 @@ export interface IErrorManager<
   TProperties = IErrorProperties,
   TFilter = IErrorFilter
 > extends IStorageManager {
-  registerHandler(handler: IErrorHandler<TProperties>): void;
-  unregisterHandler(handler: IErrorHandler<TProperties>): void;
+  registerHandler(handler: IErrorHandler<TProperties>): Promise<void>;
+  unregisterHandler(handler: IErrorHandler<TProperties>): Promise<void>;
   getHandlers(): IErrorHandler<TProperties>[];
 
-  registerReporter(reporter: IErrorReporter<TProperties>): void;
-  unregisterReporter(reporter: IErrorReporter<TProperties>): void;
+  registerReporter(reporter: IErrorReporter<TProperties>): Promise<void>;
+  unregisterReporter(reporter: IErrorReporter<TProperties>): Promise<void>;
   getReporters(): IErrorReporter<TProperties>[];
 
-  registerRecoveryStrategy(strategy: IErrorRecoveryStrategy<TProperties>): void;
+  registerRecoveryStrategy(strategy: IErrorRecoveryStrategy<TProperties>): Promise<void>;
   unregisterRecoveryStrategy(
     strategy: IErrorRecoveryStrategy<TProperties>
-  ): void;
+  ): Promise<void>;
   getRecoveryStrategies(): IErrorRecoveryStrategy<TProperties>[];
 
   captureError(error: TProperties): Promise<void>;
