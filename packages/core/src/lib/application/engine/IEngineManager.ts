@@ -27,7 +27,7 @@ export interface IEngineManager<TStatus = WorkflowStatusEnum>
   getAllWorkflowStatuses(): Promise<{ [workflowId: string]: TStatus }>;
 }
 
-export type IEngineManagerSettable<TStatus> = {
+export type IEngineManagerSettable<TStatus = WorkflowStatusEnum> = {
   storageManager: IStorageManager;
   logManager?: ILoggerManager;
   concurrencyManager?: IConcurrencyManager;

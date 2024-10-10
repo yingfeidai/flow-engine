@@ -10,8 +10,10 @@ import {
 } from '@flow-engine/manager';
 import { TaskStatusEnum } from '../../domain/task/TaskStatusEnum';
 
-export interface ITaskManager<TProperties = ITaskProperties, TStatus = TaskStatusEnum>
-  extends IManagerSettable<ITaskManagerSettable<TProperties>> {
+export interface ITaskManager<
+  TProperties = ITaskProperties,
+  TStatus = TaskStatusEnum
+> extends IManagerSettable<ITaskManagerSettable<TProperties>> {
   addTask(task: TProperties): Promise<void>;
   removeTask(taskId: string): Promise<void>;
   getTask(taskId: string): Promise<TProperties | undefined>;
@@ -23,7 +25,7 @@ export interface ITaskManager<TProperties = ITaskProperties, TStatus = TaskStatu
   updateTaskStep(taskId: string, newStep: number): Promise<void>;
 }
 
-export type ITaskManagerSettable<TProperties> = {
+export type ITaskManagerSettable<TProperties = ITaskProperties> = {
   storageManager: IStorageManager;
   dependencyManager?: IDependencyManager<TProperties>;
   retryManager?: IRetryManager;

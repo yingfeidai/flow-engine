@@ -30,7 +30,10 @@ export interface IWorkflowManager<
   getAllWorkflows(): Promise<IWorkflowProperties[]>; // Get all workflows
 }
 
-export type IWorkflowManagerSettable<TTaskProperties, TStatus> = {
+export type IWorkflowManagerSettable<
+  TTaskProperties = ITaskProperties,
+  TStatus = WorkflowStatusEnum
+> = {
   taskManager: ITaskManager;
   storageManager: IStorageManager;
   eventManager?: IEventManager;

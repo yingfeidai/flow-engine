@@ -15,7 +15,7 @@ export interface ILoggerManager<
   clearLogs(): Promise<void>;
 }
 
-export type ILoggerManagerSettable<TProperties> = {
+export type ILoggerManagerSettable<TProperties = ILogProperties> = {
   storageManager?: IStorageManager<TProperties>;
   dispatcherManager?: IDispatcherManager<TProperties>;
 };
