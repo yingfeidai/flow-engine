@@ -8,15 +8,15 @@ import {
   IRetryManager,
   IStorageManager,
 } from '@flow-engine/manager';
+import { TaskStatusEnum } from '../../domain/task/TaskStatusEnum';
 
-export interface ITaskManager<TProperties = ITaskProperties>
+export interface ITaskManager<TProperties = ITaskProperties, TStatus = TaskStatusEnum>
   extends IManagerSettable<ITaskManagerSettable<TProperties>> {
   addTask(task: TProperties): Promise<void>;
   removeTask(taskId: string): Promise<void>;
   getTask(taskId: string): Promise<TProperties | undefined>;
   getAllTasks(): Promise<TProperties[]>;
-  getPendingTasks(): Promise<TProperties[]>;
-  getFailedTasks(): Promise<TProperties[]>;
+  getTasksByStatus(status: TStatus): Promise<TProperties[]>;
   startTask(taskId: string): Promise<void>;
   cancelTask(taskId: string): Promise<void>;
   updateTaskPosition(taskId: string, newPosition: number): Promise<void>;
