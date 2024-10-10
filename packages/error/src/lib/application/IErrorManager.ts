@@ -23,7 +23,7 @@ export interface IErrorManager<
   ): void;
   getRecoveryStrategies(): IErrorRecoveryStrategy<TProperties>[];
 
-  captureError(error: TProperties): void;
+  captureError(error: TProperties): Promise<void>;
   getAllErrors(): Promise<TProperties[]>;
   getErrors(conditions?: TFilter): Promise<TProperties[]>;
   clearErrors(): Promise<void>;
