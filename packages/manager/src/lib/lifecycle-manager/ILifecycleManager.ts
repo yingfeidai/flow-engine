@@ -1,4 +1,7 @@
-export interface ILifecycleManager<TContext = Record<string, unknown>, TStatus = string> {
+export interface ILifecycleManager<
+  TContext = Record<string, unknown>,
+  TStatus = string
+> {
   onStart?(context: TContext): Promise<void>;
   onStop?(context: TContext): Promise<void>;
   onComplete?(context: TContext): Promise<void>;
