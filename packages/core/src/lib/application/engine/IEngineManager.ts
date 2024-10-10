@@ -8,15 +8,13 @@ import {
 } from '@flow-engine/manager';
 import { WorkflowStatusEnum } from '../../domain/workflow/WorkflowStatusEnum';
 import { IWorkflowProperties } from '../../domain/workflow/IWorkflow';
-import { ITaskProperties } from '../../domain/task/ITask';
 import { ILoggerManager } from '@flow-engine/logger';
 import { ISchedulerManager } from '@flow-engine/scheduler';
 import { IErrorManager } from '@flow-engine/error';
 import { IEventManager } from '@flow-engine/event';
 
-export interface IEngineManager<
-  TStatus = WorkflowStatusEnum,
-> extends IManagerSettable<IEngineManagerSettable<TStatus>> {
+export interface IEngineManager<TStatus = WorkflowStatusEnum>
+  extends IManagerSettable<IEngineManagerSettable<TStatus>> {
   registerWorkflow(workflow: IWorkflowProperties): Promise<void>;
   unregisterWorkflow(workflowId: string): Promise<void>;
 
@@ -29,7 +27,7 @@ export interface IEngineManager<
   getAllWorkflowStatuses(): Promise<{ [workflowId: string]: TStatus }>;
 }
 
-export interface IEngineManagerSettable<TStatus> {
+export type IEngineManagerSettable<TStatus> = {
   storageManager: IStorageManager;
   logManager?: ILoggerManager;
   concurrencyManager?: IConcurrencyManager;
@@ -39,4 +37,4 @@ export interface IEngineManagerSettable<TStatus> {
   errorManager?: IErrorManager;
   eventManager?: IEventManager;
   lockingManager?: ILockingManager;
-}
+};

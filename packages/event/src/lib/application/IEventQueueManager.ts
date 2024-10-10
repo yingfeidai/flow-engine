@@ -14,6 +14,6 @@ export interface IEventQueueManager<TProperties = IEventProperties>
   getQueuedEvents(): Promise<TProperties[]>;
 }
 
-export interface IEventQueueManagerSettable<TProperties> {
+export type IEventQueueManagerSettable<TProperties> = {
   storageManager?: IStorageManager<TProperties>;
-}
+};

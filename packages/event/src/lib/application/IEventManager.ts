@@ -24,9 +24,9 @@ export interface IEventManager<
   getSubscribers(eventType: TType): ((event: TProperties) => void)[];
 }
 
-export interface IEventManagerSettable<TProperties> {
+export type IEventManagerSettable<TProperties> = {
   storageManager?: IStorageManager<TProperties>;
   dispatcherManager?: IDispatcherManager<TProperties>;
   queueManager?: IEventQueueManager;
   triggerManager?: IEventTriggerManager;
-}
+};

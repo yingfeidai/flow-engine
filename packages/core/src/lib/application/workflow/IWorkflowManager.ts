@@ -13,8 +13,10 @@ import { ITaskManager } from '../task/ITaskManager';
 import { ITaskProperties } from '../../domain/task/ITask';
 import { WorkflowStatusEnum } from '../../domain/workflow/WorkflowStatusEnum';
 
-export interface IWorkflowManager<TTaskProperties = ITaskProperties, TStatus = WorkflowStatusEnum>
-  extends IManagerSettable<IWorkflowManagerSettable<TTaskProperties, TStatus>> {
+export interface IWorkflowManager<
+  TTaskProperties = ITaskProperties,
+  TStatus = WorkflowStatusEnum
+> extends IManagerSettable<IWorkflowManagerSettable<TTaskProperties, TStatus>> {
   startWorkflow(workflowId: string): Promise<void>; // Start the workflow
   stopWorkflow(workflowId: string): Promise<void>;
   restartWorkflow(workflowId: string): Promise<void>;
@@ -28,7 +30,7 @@ export interface IWorkflowManager<TTaskProperties = ITaskProperties, TStatus = W
   getAllWorkflows(): Promise<IWorkflowProperties[]>; // Get all workflows
 }
 
-export interface IWorkflowManagerSettable<TTaskProperties, TStatus> {
+export type IWorkflowManagerSettable<TTaskProperties, TStatus> = {
   taskManager: ITaskManager;
   storageManager: IStorageManager;
   eventManager?: IEventManager;
@@ -37,4 +39,4 @@ export interface IWorkflowManagerSettable<TTaskProperties, TStatus> {
   lifecycleManager?: ILifecycleManager<TStatus>;
   errorManager?: IErrorManager;
   logManager?: ILoggerManager;
-}
+};

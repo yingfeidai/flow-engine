@@ -8,10 +8,10 @@ export interface ISchedulerManager
   clearAllScheduled(): Promise<void>;
 }
 
-export interface ISchedulerManagerSettable {
+export type ISchedulerManagerSettable = {
   eventScheduler?: IScheduler;
   taskScheduler?: IScheduler;
   workflowScheduler?: IScheduler;
   storageManager?: IStorageManager;
   coordinatorManager?: ISchedulerCoordinatorManager;
-}
+};

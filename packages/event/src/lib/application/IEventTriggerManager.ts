@@ -9,6 +9,6 @@ export interface IEventTriggerManager<TProperties = IEventProperties>
   getTriggers(): Promise<TProperties[]>;
 }
 
-export interface IEventTriggerManagerSettable<TProperties> {
+export type IEventTriggerManagerSettable<TProperties> = {
   storageManager?: IStorageManager<TProperties>;
-}
+};
